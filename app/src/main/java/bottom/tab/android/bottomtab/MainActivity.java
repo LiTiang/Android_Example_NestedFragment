@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //hideToolBar();
         initStaticData();
         setupView();
         setClickTabDetector();
@@ -75,6 +77,13 @@ public class MainActivity extends AppCompatActivity
             .replace(R.id.tab_screen_container,fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
     }
+    /**
+     * The Bar which just below the Status Bar
+     */
+    private void hideToolBar() {
+        getSupportActionBar().hide();
+    }
+
     /**
      * setup each tab with view in tab container
      */
