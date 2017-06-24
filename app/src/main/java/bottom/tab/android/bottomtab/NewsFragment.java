@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 public class NewsFragment extends Fragment {
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private Integer totalAmountOfTopic = 10;
     private String[] subTabNameCollection = {
             "ONE",
             "TWO",
@@ -25,9 +26,7 @@ public class NewsFragment extends Fragment {
             "NINE",
             "TEN"
     };
-    public String[] getTabNames() {
-        return subTabNameCollection;
-    }
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
@@ -49,11 +48,8 @@ public class NewsFragment extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
     }
 
-    // FragmentPagerAdapter: represents each page as a Fragment
+    // FragmentPagerAdapter: represents each page as a Fragment in Pager
     class fragmentPagerAdapter extends FragmentPagerAdapter {
-//        private final List<Fragment> mFragmentList = new ArrayList<>();
-//        private final List<String> mFragmentTitleList = new ArrayList<>();
-          private String[] subTabNames = new NewsFragment().getTabNames();
 
         // All Fragment instance are keep in Fragment Manager
         public fragmentPagerAdapter(FragmentManager manager) {
@@ -63,18 +59,17 @@ public class NewsFragment extends Fragment {
         // create a new Fragment and return it with a specified position.
         @Override
         public Fragment getItem(int position) {
-            return SubNewsFragment.newInstance(subTabNames[position]);
+            return SubNewsFragment.newInstance(subTabNameCollection[position]);
         }
 
         // Return the total number of fragment.
         @Override
         public int getCount() { // number of views
-            return (10);
+            return totalAmountOfTopic;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-//            return mFragmentTitleList.get(position);
             return subTabNameCollection[position];
         }
     }

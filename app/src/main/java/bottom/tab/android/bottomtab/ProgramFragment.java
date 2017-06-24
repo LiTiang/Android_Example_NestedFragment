@@ -12,10 +12,6 @@ public class ProgramFragment extends Fragment {
                              ViewGroup container,
                              Bundle savedInstanceState)
     {
-//        View view = inflater.inflate(R.layout.screen_program, container, false);
-//        TextView textView = (TextView) view;
-//        textView.setText("Main Category: Program");
-//        return view;
         return inflater.inflate(R.layout.screen_program, container, false);
     }
 }

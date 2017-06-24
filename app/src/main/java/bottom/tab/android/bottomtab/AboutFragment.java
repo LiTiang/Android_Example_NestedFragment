@@ -12,10 +12,6 @@ public class AboutFragment extends Fragment {
                              ViewGroup container,
                              Bundle savedInstanceState)
     {
-//        View view = inflater.inflate(R.layout.screen_news, container, false);
-//        TextView textView = (TextView) view;
-//        textView.setText("Main Category: NEWS");
-//        return view;
         return inflater.inflate(R.layout.screen_about, container, false);
     }
 }

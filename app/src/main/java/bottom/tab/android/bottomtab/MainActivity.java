@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity
 
         //hideToolBar();
         initStaticData();
-        setupView();
+        setupTabContainer();
         setClickTabDetector();
         setupTab(); // Dont move this line before setClickTabDetector()
     }
@@ -39,15 +39,15 @@ public class MainActivity extends AppCompatActivity
         collectBottomTabScreen();
     }
 
-    private void setupView() {
-        tabContainer = (TabLayout) findViewById(R.id.tab_layout);
+    private void setupTabContainer() {
+        tabContainer = (TabLayout) findViewById(R.id.tab_container);
     }
 
     private void setClickTabDetector() {
         tabContainer.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                switchTabScreen(  fragmentCollection.get(tab.getPosition())  );
+                switchToTabScreen(  fragmentCollection.get(tab.getPosition())  );
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {}
@@ -72,9 +72,9 @@ public class MainActivity extends AppCompatActivity
         fragmentCollection.add(new AboutFragment());
     }
 
-    private void switchTabScreen(Fragment fragment) {
+    private void switchToTabScreen(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
-            .replace(R.id.tab_screen_container,fragment)
+            .replace(R.id.tab_screen_container, fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
     }
     /**

@@ -27,10 +27,9 @@ public class SubNewsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.screen_sub_news, container, false);
-        TextView textView = (TextView) view.findViewById(R.id.newsText);
-        textView.setText(tabTitle);
-//        ( (TextView) view.findViewById(R.id.newsText) ).setText(tabTitle);
+        ( (TextView) view.findViewById(R.id.newsText) ).setText(tabTitle);
         return view;
     }
 }
