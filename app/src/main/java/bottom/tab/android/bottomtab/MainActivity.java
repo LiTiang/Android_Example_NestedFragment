@@ -83,41 +83,4 @@ public class MainActivity extends AppCompatActivity
     private void hideToolBar() {
         getSupportActionBar().hide();
     }
-
-    /**
-     * setup each tab with view in tab container
-     */
-//    private void integrateTabWithPager() {
-//        tabContainer.setupWithViewPager(viewPager);
-//    }
-//    public void setupTab() {
-//        if (tabContainer != null) {
-//            integrateTabWithPager();
-//
-//            // getTabCount: return the total number of tabs
-//            //              come from PAGE_COUNT
-//            // ERROR: it seems tabContainer.getTabCount() will not work
-//            //        but i change it to `2` still crash down
-//            for (int i = 0; i < tabContainer.getTabCount(); i++) {
-//                TabLayout.Tab tab = tabContainer.getTabAt(i);
-//
-//                if (tab != null)
-//                    tab.setCustomView(getTabView(i));
-//            }
-//            setDefaultFocusingTab();
-//        }
-//    }
-//    public View getTabView(int position) {
-//        // Given you have a custom layout in `res/layout/tab.xml` TextView and ImageView
-//        View view = LayoutInflater.from(MainActivity.this).inflate(tab, null);
-//        TextView tabName = (TextView) view.findViewById(R.id.title);
-//        tabName.setText(tabNameCollection[position]);
-//        ImageView icon = (ImageView) view.findViewById(R.id.icon);
-//        icon.setImageResource(iconCollection[position]);
-//        return view;
-//    }
-//
-//    private void setDefaultFocusingTab() {
-//        tabContainer.getTabAt(0).getCustomView().setSelected(true);
-//    }
 }
